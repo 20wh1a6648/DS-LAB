@@ -1,14 +1,40 @@
-def linear_search(list1,n,key):
-    for i in range (0,n):
-      if(list1[i] == key):
-       return i;
-    return -1
+#include<stdio.h>
 
-list1 = [1,3,5,7,8,9]
-key = 7
-n= len(list1)
-result = linear_search(list1,n,key)
-if(result ==-1):
-    print("element not found")
-else: 
-    print("element fount at index",result)
+int linear_search(int arr[], int size, int element){
+    int pos;
+    for(int i = 0; i < size; i++){
+        if(arr[i] == element){
+            return i + 1;
+            
+            }
+
+    }
+    return -1;
+
+}
+
+
+int main(){
+    int size;
+    printf("Enter size : ");
+    scanf("%d", &size);
+    int arr[size];
+    int element, pos;
+    printf("Enter %d elements : ", size);
+    for (int i = 0; i < size; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("Element to be searched : ");
+    scanf("%d", &element);
+    pos = linear_search(arr, size, element);
+    if (pos == -1){
+        printf("Element is not found\n");
+    }
+    else{
+        printf("Element found at %d.\n", pos);
+    }
+
+
+}
+
+
